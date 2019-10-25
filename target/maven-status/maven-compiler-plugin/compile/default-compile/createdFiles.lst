@@ -1,3 +1,9 @@
-com\hos\mapper\User.class
+com\hos\mapper\User1.class
+com\hos\mapper\User7.class
 com\hos\service\A.class
 com\hos\controller\Test.class
+com\hos\mapper\User2.class
+com\hos\interceptor\User4.class
+com\hos\mapper\User8.class
+com\hos\mapper\User3.class
+com\hos\mapper\User5.class

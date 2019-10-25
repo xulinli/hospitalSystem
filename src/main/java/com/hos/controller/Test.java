@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author xu
  * @date 19/10/25-11:13
  */
-@CrossOrigin
+
 @Controller
 @RequestMapping("test")
 public class Test {
