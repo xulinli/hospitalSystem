@@ -1,4 +1,4 @@
-package com.hos.mapper;
+package com.hos.entity;
 
 /**
  * @author xu
