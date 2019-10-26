@@ -29,9 +29,6 @@
   </listener>
 
 
-  <!--过滤静态资源-->
-
-
   <!--设置字符集编码，防止乱码-->
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
