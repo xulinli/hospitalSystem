@@ -14,9 +14,9 @@
     <!--配置连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Shanghai"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/hospital?serverTimezone=Asia/Shanghai"></property>
         <property name="username" value="root"></property>
-        <property name="password" value="root"></property>
+        <property name="password" value="Xu1234567@"></property>
     </bean>
 
     <!--配置会话工厂-->

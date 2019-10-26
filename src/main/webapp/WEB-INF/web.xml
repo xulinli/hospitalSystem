@@ -14,7 +14,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 
 
@@ -30,6 +30,7 @@
 
 
   <!--过滤静态资源-->
+
 
   <!--设置字符集编码，防止乱码-->
   <filter>
