@@ -16,7 +16,7 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping
-    public PageInfo<Patient> queryPatient(@RequestBody Map<String,Object> params){
+    public PageInfo<Patient> queryPatient(@RequestParam Map<String,Object> params){
         System.out.println(params);
         return patientService.queryPatient(params);
     }
