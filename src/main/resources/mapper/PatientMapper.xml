@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hos.mapper.PatientMapper">
+
+    <select id="queryPatient" resultType="com.hos.entity.Patient" parameterType="String">
+        SELECT * FROM
+        patient
+        WHERE 1=1
+        <if test="patientName != null and patientName != ''">
+            AND patientname LIKE CONCAT('%', #{patientName}, '%')
+        </if>
+    </select>
+    <delete id="deletePatient">
+        DELETE FROM brand WHERE 1=1
+        <if test="params.brandName != null and prams.brandName != ''">
+            AND `name` LIKE CONCAT('%', #{params.brandName},'%')
+        </if>
+        <if test="params.deleteIds != null and params.deleteIds.length>0">
+            AND id IN
+            <foreach collection="params.deleteIds" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </if>
+    </delete>
+    <insert id="addPatient">
+        INSERT INTO brand(`name`,first_char) VALUES (#{brand.name}, #{brand.firstChar})
+    </insert>
+
+    <update id="updatePatient">
+        UPDATE brand SET `name`=#{brand.name}, first_char=#{brand.firstChar} WHERE id=#{brand.id}
+    </update>
+</mapper>

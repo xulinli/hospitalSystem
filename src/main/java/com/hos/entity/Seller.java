@@ -11,8 +11,13 @@ import java.util.List;
 @Data
 public class Seller implements UserDetails {
 
+
     private String sellerId;
     private String password;
+    private String employee_id;
+    private String username;
+    private int root;
+
     private List<? extends GrantedAuthority> authorities;
 
     @Override

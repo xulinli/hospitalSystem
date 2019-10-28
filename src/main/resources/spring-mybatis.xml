@@ -16,13 +16,18 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/hospital?serverTimezone=Asia/Shanghai"></property>
         <property name="username" value="root"></property>
-        <property name="password" value="Xu1234567@"></property>
+        <property name="password" value="z6666666"></property>
     </bean>
 
     <!--配置会话工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="plugins">
+            <array>
+                <ref bean="pageHelper"/>
+            </array>
+        </property>
     </bean>
 
     <!--配置mapper接口扫描-->
@@ -41,4 +46,14 @@
 
     <!--开启事务对应注解的扫描-->
     <context:component-scan base-package="com.hos.service"></context:component-scan>
+
+    <!-- 分页配置 -->
+    <bean id="pageHelper" class="com.github.pagehelper.PageInterceptor">
+        <property name="properties">
+            <props>
+                <prop key="helperDialect">mysql</prop>
+                <prop key="reasonable">true</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

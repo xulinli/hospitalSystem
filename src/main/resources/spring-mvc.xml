@@ -38,4 +38,5 @@
     <!--开启扫描-->
     <context:component-scan base-package="com.hos.controller"></context:component-scan>
 
+    <context:component-scan base-package="com.hos.config"></context:component-scan>
 </beans>

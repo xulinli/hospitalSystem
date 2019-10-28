@@ -2,15 +2,12 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hos.mapper.SellerServiceMapper">
 
-    <select id="getSellerById" resultType="seller"  parameterType="String">
-        SELECT seller_id sellerId,password FROM yys_seller WHERE seller_id=#{0}
+    <select id="getSellerById" resultType="com.hos.entity.Seller"  parameterType="String">
+        SELECT sellerId,employee_id,username,password,root FROM `user` WHERE sellerId=#{0}
     </select>
 
     <update id="register">
-        INSERT INTO yys_seller values
-        (#{params.sellerId},#{params.password},#{params.nickName},#{params.companyName},#{params.companyTelephone},
-        #{params.companyAddress},#{params.linkPersonName},#{params.linkPersonQQ},#{params.linkPersonMobile},
-        #{params.linkPersonEmail},#{params.licenseNumber},#{params.taxNumber},#{params.organizationNumber},#{params.legalPerson},
-        #{params.legalPersonCardId},#{params.bankName},#{params.bankBranchName},#{params.bankAccount},0,null,null,null,#{params.data})
+        INSERT INTO `user` values
+        (#{params.sellerId},#{params.employee_id},#{params.username},#{params.password},#{params.root})
     </update>
 </mapper>
