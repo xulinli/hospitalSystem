@@ -1,6 +1,5 @@
 package com.hos.controller;
 
-import com.hos.entity.Registrar;
 import com.hos.service.RegistrarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +22,7 @@ public class RegisterController {
 
     @GetMapping
     public int login(@RequestParam Map<String,Object> params){
-        Registrar registrar=registrarService.queryRegistrarById(params);
-        if(registrar==null) return -1;
-        return 1;
+        int registrar=registrarService.queryRegistrarById(params);
+        return registrar;
     }
 }

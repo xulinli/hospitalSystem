@@ -14,7 +14,7 @@ import java.util.Map;
 public interface RegistrarService {
 
     //通过ID查询挂号员
-    Registrar queryRegistrarById(@Param(value = "params") Map<String,Object> params);
+    int queryRegistrarById(@Param(value = "params") Map<String,Object> params);
 
     //修改密码
     int updatePassword(@Param(value = "params") Map<String,Object> params);

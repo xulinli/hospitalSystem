@@ -24,14 +24,14 @@ public class RegistrarServiceImpl implements RegistrarService {
     private RegisterMapper registerMapper;
 
     @Override
-    public Registrar queryRegistrarById(Map<String, Object> params) {
-        params.put("register_id",1001);
-        params.put("password","123456");
+    public int queryRegistrarById(Map<String, Object> params) {
+//        params.put("register_id",1001);
+//        params.put("password","123456");
         Registrar registrar=registerMapper.queryRegistrarById(params);
-        if(registrar==null) return null;
+        if(registrar==null) return -1;
         String password= (String) params.get("password");
-        if(!password.equals(registrar.getPassword())) return null;
-        return registrar;
+        if(!password.equals(registrar.getPassword())) return 0;
+        return 1;
     }
 
     @Override
