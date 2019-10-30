@@ -6,6 +6,7 @@ import com.hos.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
 @RestController
@@ -18,7 +19,14 @@ public class PatientController {
     @GetMapping
     public PageInfo<Patient> queryPatient(@RequestParam Map<String,Object> params){
         System.out.println(params);
-        return patientService.queryPatient(params);
+        String name = (String) params.get("patientName");
+        try {
+            byte[] bytes = name.getBytes("ISO-8859-1");
+            params.put("patientName",new String(bytes, "utf-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @PostMapping
@@ -33,6 +41,8 @@ public class PatientController {
 
     @DeleteMapping
     public Integer deletePatient(@RequestParam Map<String,Object> params){
+        System.out.println(1);
+        System.out.println(params);
         return patientService.deletePatient(params);
     }
 }

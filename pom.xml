@@ -123,7 +123,7 @@
           <groupId>org.apache.tomcat.maven</groupId>
           <artifactId>tomcat7-maven-plugin</artifactId>
           <configuration>
-            <port>1234</port>
+            <port>3333</port>
             <path>/</path>
           </configuration>
         </plugin>
@@ -160,4 +160,5 @@
     </pluginManagement>
   </build>
 </project>
+
 
