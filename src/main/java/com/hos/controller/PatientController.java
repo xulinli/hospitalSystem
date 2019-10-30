@@ -26,8 +26,7 @@ public class PatientController {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        System.out.println(params);
-        return patientService.queryPatient(params);
+
     }
 
     @PostMapping

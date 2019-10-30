@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hos.mapper.storage.SuppllierMapper">
+
+    <select id="query" resultType="com.hos.entity.Supplier" parameterType="java.util.Map">
+        select id,name,tel from supplier where 1=1
+        <if test="params.keyname!=null and params.keyname!=''">
+            and name like concat("%",#{params.keyname},"%")
+        </if>
+    </select>
+    <update id="add" parameterType="java.util.Map">
+        insert into supplier(id,name,tel) values (default,#{params.name},#{params.tel})
+    </update>
+    <update id="update" parameterType="java.util.Map">
+        update supplier set ${params.key}=#{params.value} where name=#{params.name}
+    </update>
+
+    <update id="delete" parameterType="java.util.Map">
+        delete from supplier where
+        <if test="params.name!=null and params.name!=''" >
+            name=#{params.name}
+        </if>
+        <if test="params.delall!=null and params.delall!='' and params.keyname!=null and params.keyname!=''" >
+            name like concat("%",#{params.keyname},"%"ame}
+        </if>
+    </update>
+</mapper>
